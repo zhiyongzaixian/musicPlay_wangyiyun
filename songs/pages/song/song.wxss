@@ -1,0 +1,187 @@
+.songContainer {
+  height: 100%;
+  width: 100%;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  overflow-x:hidden;
+}
+.songContainer:after {
+  content: "";
+  width:100%;
+  height:100%;
+  position: absolute;
+  left:0;
+  top:0;
+  background: #e8e8e8;
+  opacity: 0.8;
+  z-index: 2;
+}
+/* 参考地址 */
+/*https://blog.csdn.net/csu_passer/article/details/78406702*/
+
+
+.contentContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position:relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+}
+
+.author {
+  color: #fff;
+  font-size: 32rpx;
+}
+
+/* 图片不够，结构来凑*/
+.keng {
+  position: relative;
+  z-index: 100;
+  width: 60rpx;
+  height: 60rpx;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10rpx 0;
+
+}
+
+.needle {
+  position: relative;
+  z-index: 99;
+  left: 60rpx;
+  top: -40rpx;
+  width: 192rpx;
+  height: 274rpx;
+  transform-origin: 40rpx 0;
+  transform: rotate(-20deg);
+  transition: transform 1s;
+}
+
+
+.needle.needleRotate {
+  /*transform-origin: 28rpx 222rpx;*/
+  transform-origin: 40rpx 0;
+  transform: rotate(0deg);
+}
+
+.discContainer {
+  position: relative;
+  top: -170rpx;
+  z-index: 1;
+  width: 598rpx;
+  height: 598rpx;
+  transition: all 1s infinite;
+  transform-origin: 50%;
+}
+
+
+
+
+
+/* 旋转动画 */
+.discContainer.disRotate {
+  animation: disc 4s linear infinite;
+  animation-delay: 1s;
+  transform-origin: 50% 50%;
+}
+
+
+@keyframes disc {
+  from {}
+  to {transform: rotate(360deg)}
+}
+
+.discContainer .disc {
+  width: 100%;
+  height: 100%;
+}
+
+.discContainer .musicImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 370rpx;
+  height: 370rpx;
+  border-radius: 50%;
+}
+
+
+/* musicControl */
+.musicControl {
+  position: absolute;
+  bottom: 40rpx;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1rpx solid #fff;
+}
+
+.musicControl text {
+  width: 20%;
+  text-align: center;
+  font-size: 50rpx;
+  color: #fff;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.musicControl text.big {
+  font-size: 80rpx;
+}
+
+
+/* 播放进度条控制 */
+
+.audioControl {
+  position: absolute;
+  bottom: 200rpx;
+  width: 640rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  transition: all 0s;
+
+}
+
+
+.barControl {
+  position: relative;
+  width: 450rpx;
+  height: 4rpx;
+  border-radius: 2rpx;
+  margin: auto;
+  background: rgba(0,0,0,.4);
+  transition: all 0s;
+
+}
+
+
+.audio-current-time {
+  position: absolute;
+  top: -2rpx;
+  left: 0;
+  height: 8rpx;
+  background: red;
+  z-index: 2;
+  border-radius: 50%;
+  transition: all 0s;
+
+}
+
+.audio-progress {
+  position: absolute;
+  top: -2rpx;
+  right: 0;
+  z-index: 3;
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: white;
+  transition: all 0s;
+}

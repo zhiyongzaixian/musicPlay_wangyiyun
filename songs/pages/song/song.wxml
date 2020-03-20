@@ -1,0 +1,42 @@
+<!--<view class="songContainer" style="background-image: url('');">-->
+<view class="songContainer"
+      style="background-image: url({{song.al.picUrl}})">
+  <view class="contentContainer" wx:if="{{song.name}}">
+    <view class="author">{{song.ar[0].name}}</view>
+    <!-- 磁盘区域 -->
+    <view  class="keng"></view>
+    <image class="needle {{isPlay?'needleRotate':''}}" src="/static/images/song/needle.png"></image>
+    <view class="discContainer {{isPlay?'disRotate':''}}">
+      <image class="disc"  src="/static/images/song/disc.png"></image>
+      <image class="musicImg" src="{{song.al.picUrl}}"></image>
+    </view>
+
+    <!-- 播放进度条 -->
+    <view class="audioControl">
+      <text>{{currentMomentTime}}</text>
+      <view class="barControl">
+        <view class="audio-current-time" style="width: {{currentTimeWidth + 'rpx'}}">
+          <view
+              class="audio-progress"
+              bindtouchstart="progressControlStart"
+              bindtouchmove="progressControlMove"
+              bindtouchend="progressControlEnd"
+          ></view>
+        </view>
+      </view>
+      <text>{{momentTime}}</text>
+    </view>
+
+    <!-- 底部播放选项区域 -->
+    <view class="musicControl">
+      <text class="iconfont icon-iconsMusicyemianbofangmoshiShuffle" bindtap="playTypeControl"></text>
+      <text class="iconfont icon-shangyishou" bindtap="switchSong" data-type="pre"></text>
+      <text class="iconfont {{isPlay?'icon-zanting': 'icon-bofang'}} big" bindtap="musicPlay"></text>
+      <text class="iconfont icon-next" bindtap="switchSong" data-type="next"></text>
+      <text class="iconfont icon-iconsMusicyemianbofangmoshiPlayList"></text>
+    </view>
+  </view>
+
+</view>
+
+

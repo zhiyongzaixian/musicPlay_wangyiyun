@@ -1,0 +1,8 @@
+/* 引入外部样式 */
+@import '/static/iconfont/iconfont.wxss';
+
+
+page {
+  width: 100%;
+  height: 100%;
+}

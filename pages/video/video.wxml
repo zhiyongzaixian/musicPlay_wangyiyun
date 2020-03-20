@@ -1,0 +1,67 @@
+<view class="videoContainer">
+  <!-- 头部 -->
+  <view class="videoHeader">
+    <image src="/static/images/video/video.jpg" bindtap="chooseVideo"></image>
+    <view class="search">
+      <input type="text" placeholder="光辉岁月" placeholder-class="placeholder"/>
+    </view>
+    <image src="/static/images/logo.png"></image>
+  </view>
+
+
+  <!-- 导航 -->
+
+  <!--<scroll-view class="videoNav"  scroll-x="true" enable-flex>-->
+  <scroll-view class="videoNav"   scroll-x="true" >
+    <view bindtap="changeNavId" data-id="{{item.id}}" class="navItem {{item.id===navId?'active':''}}"  wx:for="{{videoGroupList}}" wx:key="{{index}}">
+      <view>{{item.name}}</view>
+    </view>
+  </scroll-view>
+
+
+  <!-- 视频标签数据 -->
+  <scroll-view
+      scroll-y="true"
+      class="videoList"
+      wx:if="{{videoList.length}}"
+      refresher-enabled
+      refresher-background="pink"
+      refresher-triggered="{{isTrigger}}"
+      bindrefresherrefresh="handleRefresherPull"
+      bindrefresherrestore="handleRefresherRestore"
+  >
+    <view wx:for="{{videoList}}" wx:key="index" class="videoItem">
+      <!--<image src="{{item.data.coverUrl}}"></image>-->
+      <video
+          src="{{item.data.urlInfo.url}}"
+          poster="{{item.data.coverUrl}}"
+          enable-progress-gesture
+          title="{{item.data.title}}"
+          bindplay="handlePlay"
+          data-vid="{{item.data.vid}}"
+          custom-cache="{{false}}"
+      ></video>
+      <view class="content">
+        {{item.data.title}}
+        <!--<image src="{{item.data.creator.avatarUrl}}"></image>-->
+      </view>
+      <view class="footer">
+        <image class="avatarUrl" src="{{item.data.creator.avatarUrl}}"></image>
+        <text class="nickName">{{item.data.creator.nickname}}</text>
+        <view class="comments_praised">
+          <text class="item" bindtap="handleChangePraised" data-id="isActivePraised" data-index="{{index}}">
+            <text  class="iconfont icon-buoumaotubiao15 {{isActivePraised[index]? 'active':''}}"></text>
+            <text class="showCount">{{item.data.praisedCount}}</text>
+          </text>
+          <text class="item" bindtap="handleChangePraised" data-id="isActiveComment" data-index="{{index}}">
+            <text  class="iconfont icon-pinglun1 {{isActiveComment[index]? 'active':''}}"></text>
+            <text class="showCount ">{{item.data.commentCount}}</text>
+          </text>
+          <button class="item btn" open-type="share" data-index="{{index}}">
+            <text class="iconfont icon-gengduo"></text>
+          </button>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

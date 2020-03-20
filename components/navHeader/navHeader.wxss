@@ -1,0 +1,20 @@
+.header .title {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.header .nav {
+  font-size: 28rpx;
+  color: #000;
+  margin: 15rpx 0;
+}
+
+.header .nav .more {
+  float: right;
+  border: 1rpx solid;
+  font-size: 24rpx;
+  padding: 0 20rpx;
+  line-height: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+}

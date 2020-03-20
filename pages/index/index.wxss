@@ -1,0 +1,128 @@
+/* pages/index/index.wxss */
+.indexContainer .navSwiper {
+  width: 100%;
+  height: 300rpx;
+}
+
+
+
+.indexContainer .navSwiper image {
+  width: 100%;
+  height: 300rpx;
+}
+
+
+.navContainer {
+  display: flex;
+  padding: 20rpx 0;
+}
+
+.navContainer .navItem {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navContainer .navItem .iconfont {
+  font-size: 50rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background: rgb(240, 19, 19);
+  text-align: center;
+  line-height: 100rpx;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.navContainer .navItem text {
+  font-size: 26rpx;
+  line-height: 40rpx;
+  margin: 10rpx 0;
+}
+
+/* 推荐歌曲 recommend */
+.totalStyle {
+  padding: 0 20rpx;
+  margin-bottom: 40rpx;
+}
+
+
+/* 推荐列表 */
+
+.scrollBar {
+  display: flex;
+  height: 300rpx;
+}
+
+.scrollItem {
+  width: 200rpx;
+  margin-right: 30rpx;
+}
+.scrollItem image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 20rpx;
+}
+
+.scrollItem .scrollContent {
+  font-size: 24rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;  /*webkit盒模型*/
+  -webkit-line-clamp:2;  /*控制行数*/
+  -webkit-box-orient: vertical;  /*规定框的子元素应该被水平或垂直排列。*/
+}
+
+
+
+/* 排行榜 */
+.topListContainer swiper {
+  height: 460rpx; /*不设置高度默认为300rpx*/
+}
+.topListContainer swiper .swiperItem{
+  width: 100%;
+
+}
+.topListContainer swiper .swiperContent{
+  width: 94%;
+  margin-right: 6%;
+  background: #fbfbfb;
+  border-radius: 10rpx;
+  padding-left: 20rpx;
+}
+
+.topListContainer .swiperContent .title {
+  font-size: 28rpx;
+  line-height: 60rpx;
+}
+
+.swiperItem .musicContent {
+  display: flex;
+  height: 100rpx;
+  margin: 20rpx 0;
+}
+
+.swiperItem .musicContent  .musicImg {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+
+.swiperItem .musicContent .count {
+  width: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.swiperItem .musicContent .musicName {
+  width: 400rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
