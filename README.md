@@ -26,3 +26,4 @@
     2. 服务器根目录下执行: node app.js
     3. 服务器地址： http://localhost:3000
     4. 示例: http://localhost:3000/banner
+    5. 为了用真机测试使用utools工具，如果不了解utools可以将小程序前端项目utils目录下的config.js文件的host改成localhost:3000
