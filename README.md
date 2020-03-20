@@ -21,3 +21,8 @@
     8. CSS3动画
     9. 分享功能
     10. 分包实现
+## 服务器使用说明
+    1. 解压对应的压缩包
+    2. 服务器根目录下执行: node app.js
+    3. 服务器地址： http://localhost:3000
+    4. 示例: http://localhost:3000/banner
